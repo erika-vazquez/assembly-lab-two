@@ -1,0 +1,136 @@
+A51 MACRO ASSEMBLER  LAB2                                                                 09/27/2016 02:46:53 PAGE     1
+
+
+MACRO ASSEMBLER A51 V8.2.5.0
+OBJECT MODULE PLACED IN .\Objects\Lab2.obj
+ASSEMBLER INVOKED BY: C:\Keil_v5\C51\BIN\A51.EXE Lab2.a51 SET(SMALL) DEBUG PRINT(.\Listings\Lab2.lst) OBJECT(.\Objects\L
+                      ab2.obj) EP
+
+LOC  OBJ            LINE     SOURCE
+
+                       1                     ; ERIKA VAZQUEZ CS343
+
+0000                   2                     ORG     00
+
+0000 802E              3                     JMP     MAIN
+
+0030                   4                     ORG     30H
+
+0030                   5     MAIN:
+
+0030 120039            6                     LCALL SUBR1
+
+0033 12004A            7                     LCALL SUBR2
+
+0036 12005B            8                     LCALL SUBR3
+
+                       9                     
+
+                      10                     
+
+0039                  11     SUBR1:          
+
+                      12                     
+
+0039 7404             13                     MOV     A, #4
+
+003B 750004           14                     MOV             100H, #4
+
+003E 900105           15                     MOV     DPTR, #105H
+
+0041 75F008           16                     MOV     B, #8
+
+0044 25F0             17                     ADD     A,B
+
+0046 F540             18                     MOV     40H, A
+
+0048 F5A0             19                     MOV     P2, A
+
+                      20                     
+
+004A                  21     SUBR2:          
+
+004A 900101           22                     MOV     DPTR, #101H
+
+004D 74F4             23                     MOV     A, #-12
+
+004F 900106           24                     MOV     DPTR, #106H
+
+0052 75F012           25                     MOV     B, #18
+
+0055 25F0             26                     ADD     A,B
+
+0057 F541             27                     MOV     41H, A
+
+0059 F590             28                     MOV     P1, A
+
+                      29                     
+
+005B                  30     SUBR3:          
+
+005B 900102           31                     MOV     DPTR, #102H
+
+005E 7442             32                     MOV     A, #66
+
+0060 900107           33                     MOV     DPTR, #107H
+
+0063 75F045           34                     MOV     B, #69
+
+0066 25F0             35                     ADD     A,B
+
+0068 F542             36                     MOV     42H, A
+
+006A F580             37                     MOV     P0, A
+
+                      38     
+
+006C 30D208           39                     JNB     OV, NOOV
+
+006F 7401             40                     MOV     A, #1
+
+0071 F543             41                     MOV     43H, A
+
+0073 F5B0             42                     MOV     P3, A
+
+0075 80FE             43                     SJMP    $
+
+0077                  44     NOOV: 
+
+0077 7400             45                     MOV     A, #0
+
+0079 F5B0             46                     MOV     P3, A
+
+                      47                     
+
+007B 80FE             48                     JMP $
+
+                      49                     
+
+                      50                     END
+
+
+A51 MACRO ASSEMBLER  LAB2                                                                 09/27/2016 02:46:53 PAGE     2
+
+SYMBOL TABLE LISTING
+------ ----- -------
+
+
+N A M E             T Y P E  V A L U E   ATTRIBUTES
+
+B. . . . . . . . .  D ADDR   00F0H   A   
+MAIN . . . . . . .  C ADDR   0030H   A   
+NOOV . . . . . . .  C ADDR   0077H   A   
+OV . . . . . . . .  B ADDR   00D0H.2 A   
+P0 . . . . . . . .  D ADDR   0080H   A   
+P1 . . . . . . . .  D ADDR   0090H   A   
+P2 . . . . . . . .  D ADDR   00A0H   A   
+P3 . . . . . . . .  D ADDR   00B0H   A   
+SUBR1. . . . . . .  C ADDR   0039H   A   
+SUBR2. . . . . . .  C ADDR   004AH   A   
+SUBR3. . . . . . .  C ADDR   005BH   A   
+
+
+REGISTER BANK(S) USED: 0 
+
+
+ASSEMBLY COMPLETE.  0 WARNING(S), 0 ERROR(S)
